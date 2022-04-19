@@ -13,7 +13,6 @@ public class Atividade {
         System.out.println("|  " + Pattern.matches(a, "bb") + "  |");//false
         System.out.println("|  " + Pattern.matches(a, "abaa") + "  |");//false
         
-
         //Não Começa com aa
         String b = "[ab]?[b]*|b[a]*";
         System.out.println("===========");
@@ -68,7 +67,6 @@ public class Atividade {
         System.out.println("|  " + Pattern.matches(g, "abbab") + "  |");//false
         System.out.println("|  " + Pattern.matches(g, "aabaab") + "  |");//false
 
-
         //Possui comprimento diferente de 3
         String h = "[ab]{0,2}|[ab]{4,}";
         System.out.println("===========");
@@ -77,5 +75,23 @@ public class Atividade {
         System.out.println("|  " + Pattern.matches(h, "aabba") + "   |");//true 
         System.out.println("|  " + Pattern.matches(h, "aab") + "  |");//false
         System.out.println("|  " + Pattern.matches(h, "baa") + "  |");//false
+
+        //Possuem comprimento par
+        String i = "([ab][ab])*";
+        System.out.println("===========");
+        System.out.println("| Letra i |");
+        System.out.println("|  " + Pattern.matches(i, "aa") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(i, "aaaa") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(i, "a") + "  |");//false
+        System.out.println("|  " + Pattern.matches(i, "aaa") + "  |");//false
+
+        //Possuem comprimento impar
+        String j = "[ab]([ab][ab])*";
+        System.out.println("===========");
+        System.out.println("| Letra j |");
+        System.out.println("|  " + Pattern.matches(j, "b") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(j, "aba") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(j, "baba") + "  |");//false
+        System.out.println("|  " + Pattern.matches(j, "abbaab") + "  |");//false
     }
 }
