@@ -93,5 +93,33 @@ public class Atividade {
         System.out.println("|  " + Pattern.matches(j, "aba") + "   |");//true 
         System.out.println("|  " + Pattern.matches(j, "baba") + "  |");//false
         System.out.println("|  " + Pattern.matches(j, "abbaab") + "  |");//false
-    }
+
+        //Possuem comprimento múltiplo de 4
+        String k = "([ab][ab][ab][ab])*";
+        System.out.println("===========");
+        System.out.println("| Letra k |");
+        System.out.println("|  " + Pattern.matches(k, "") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(k, "baba") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(k, "ba") + "  |");//false
+        System.out.println("|  " + Pattern.matches(k, "baa") + "  |");//false
+
+        //Possuem quantidade par de símbolos a
+        String l = "(b*ab*ab*)*";
+        System.out.println("===========");
+        System.out.println("| Letra l |");
+        System.out.println("|  " + Pattern.matches(l, "baa") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(l, "baaaba") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(l, "aaba") + "  |");//true 
+        System.out.println("|  " + Pattern.matches(l, "abbbbbb") + "  |");//true 
+
+        //Possuem quantidade impar de símbolos b
+        String m = "[b](a*ba*ba*)*|(a*ba*ba*)*[b]";
+        System.out.println("===========");
+        System.out.println("| Letra m |");
+        System.out.println("|  " + Pattern.matches(m, "abbb") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(m, "ababbabab") + "   |");//true 
+        System.out.println("|  " + Pattern.matches(m, "bbababbb") + "  |");//false 
+        System.out.println("|  " + Pattern.matches(m, "bbabb") + "  |");//false
+        
+    }    
 }
